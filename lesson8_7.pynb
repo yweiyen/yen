@@ -1,0 +1,21 @@
+import pyinputplus as pyip
+
+sbp = pyip.inputInt("請輸入收縮壓:", min= 0)
+print(sbp)
+dbp = pyip.inputInt("請輸入舒張壓:", min= 0)
+print(dbp)
+
+if sbp < 120 and dbp < 80:
+    suggestion = '正常'
+elif 120 <= sbp <= 129 and dbp < 80:
+    suggestion = '血壓升高'
+elif 130 <= sbp and dbp < 80:
+    suggestion = '單純收縮期高血壓'
+elif 130 <= sbp <= 139 or 80 <= dbp <= 89:
+    suggestion = '高血壓一期'
+elif 140 <= sbp or 90 <= dbp:
+    suggestion = '高血壓二期'
+else:
+    suggestion = '未知區間'
+
+print(f'suggestion = {suggestion}')
